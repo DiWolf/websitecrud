@@ -1,0 +1,16 @@
+@model IEnumerable<elguero.Entities.Eventos.Platillos>
+ <ul class="portfolio_items isotope-container clearfix portfolio-page-template gallery">
+             @foreach(var item in Model)
+{
+    <li class="isotope-item all logos">
+                    <div class="item-container">
+                        <img src="@Html.DisplayFor(modelItem => item.RutaImage)" alt="Evento en el guerpo 1" />
+                        
+                    </div>
+                    <div class="portfolio_post_content">
+                        <h4> @Html.DisplayFor(modelItem => item.Nombre)</h4>
+                    </div>
+                </li>
+   
+}                    
+            </ul>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Administración - @ViewData["Title"]</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        
+   
+    </environment>
+    <environment names="Staging,Production">
+		 <link href="~/assets/css/style.default.css" rel="stylesheet">
+         <link href="~/assets/css/prettyPhoto.css" rel="stylesheet">
+            <link href="~/assets/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+        <link href="~/assets/css/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        
+        <script src="~/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="~/assets/js/jquery-migrate-1.2.1.min.js"></script>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+
+    </environment>
+      
+ 
+</head>
+
+<body>
+  <header>
+            <div class="headerwrapper">
+                <div class="header-left">
+                    <div class="pull-right">
+                        <a href="#" class="menu-collapse">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </div><!-- header-left -->
+                
+                <div class="header-right">
+                    <div class="pull-right">
+                        <div class="btn-group btn-group-option">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">        
+                              <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>Salir</a></li>
+                            </ul>
+                        </div><!-- btn-group -->
+                        
+                    </div><!-- pull-right -->
+                    
+                </div><!-- header-right -->
+                
+            </div><!-- headerwrapper -->
+        </header>
+        
+ <section>
+            <div class="mainwrapper">
+                <div class="leftpanel">
+                   
+                    
+                    <h5 class="leftpanel-title">Navegación</h5>
+                    <ul class="nav nav-pills nav-stacked">                   
+                        <li class="parent"><a href="#"><i class="fa fa-bars"></i> <span>Administración de Páginas</span></a>
+                            <ul class="children">
+                                <li><a asp-area="" asp-controller="Admin" asp-action="HistoriaAdmin">Historia</a></li>
+                                <li><a asp-area="" asp-controller="Admin" asp-action="Sucursales">Sucursales</a></li>
+                                <li><a asp-area="" asp-controller="Admin" asp-action="EventosInfo">Eventos</a></li>
+                                <li><a href="#">Salon Privado</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#"><i class="fa fa-bars"></i><span>Administrar galerias</span></a>
+                            <ul class="children">
+                                <li><a asp-area="" asp-controller="Admin" asp-action="GaleriaEventos">Galeria de Eventos</a></li>
+                                <li><a asp-area="" asp-controller="Admin" asp-action="MostrarPlatillos">Galería de Platillos</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#"><i class="fa fa-bars"></i><span>Administrar Menús</span></a>
+                        <ul class="children">
+                            <li><a asp-area="" asp-controller="Admin" asp-action="MostrarMenuRestaurante">Menú Restaurantes</a></li>
+                            <li><a asp-area="" asp-controller="Admin" asp-action="MostrarMenuEventos">Menú Eventos</a></li>
+                        </ul>
+                        </li>
+                         <li><a asp-area="" asp-controller="Admin" asp-action="MostrarPromociones"><i class="fa fa-home"></i> <span>Administrar Promociones</span></a></li>
+                      
+                        
+                    </ul>
+                    
+                </div><!-- leftpanel -->
+  <div class="mainpanel">
+
+
+                    @RenderBody()
+                    	</div>
+			</div><!-- mainwrapper -->
+        </section>
+
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+ <environment names="Staging,Production">
+             <!-- jQuery  -->
+        
+        
+        
+        <script src="~/assets/js/bootstrap.min.js"></script>
+        <script src="~/assets/js/modernizr.min.js"></script>
+        <script src="~/assets/js/pace.min.js"></script>
+        <script src="~/assets/js/retina.min.js"></script>
+        <script src="~/assets/js/jquery.cookies.js"></script>
+       <script src="~/assets/css/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/assets/css/datatables/dataTables.bootstrap.js"></script>
+        
+        <script src="~/assets/js/jquery.prettyPhoto.js"></script>
+
+       <script src="~/assets/js/custom.js"></script>
+        <script src="~/assets/js/wysihtml5-0.3.0.min.js"></script>
+        <script src="~/assets/js/bootstrap-wysihtml5.js"></script>
+
+        
+           <script>
+            jQuery(document).ready(function(){
+                
+              // HTML5 WYSIWYG Editor
+              jQuery('#wysiwyg').wysihtml5({color: true,html:true});
+                jQuery('#x').wysihtml5({color: true,html:true});
+              // CKEditor
+              jQuery('.thmb').hover(function() {
+                    var t = jQuery(this);
+                    t.find('.ckbox').show();
+                    t.find('.fm-group').show();
+                }, function() {
+      
+                    var t = jQuery(this);
+                    if(!t.closest('.thmb').hasClass('checked')) {
+                        t.find('.ckbox').hide();
+                        t.find('.fm-group').hide();
+                    }
+                });
+
+                
+                jQuery('.ckbox').each(function(){
+                    var t = jQuery(this);
+                    var parent = t.parent();
+                    if(t.find('input').is(':checked')) {
+                        t.show();
+                        parent.find('.fm-group').show();
+                        parent.addClass('checked');
+                    }
+                });
+              
+            });
+            jQuery("a[data-rel^='prettyPhoto']").prettyPhoto();
+        </script>
+
+
+    </environment>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

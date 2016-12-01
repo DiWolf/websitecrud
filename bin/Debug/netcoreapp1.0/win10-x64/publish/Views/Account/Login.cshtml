@@ -1,0 +1,41 @@
+@model elguero.Entities.LoginViewModel
+@{
+    ViewData["Title"] = "Ingresar al sistema";
+}
+<img id="full-screen-background-image" src="../images/slider/2.jpg" alt="img" />
+
+<section id="container-fluid">
+    <div id="container" class="contact">
+    <div class="two-third">
+    <h2>Ingresar al sistema</h2>
+    <div class="contact_form">
+    <form asp-controller="Account" asp-action="Login" method="post" id="contact-form">
+        <div id="main">
+        <div id="contact_response" asp-validation-summary="All">
+        <div class="success">    </div>
+        </div>
+              <div class="one-third"><input asp-for="UserName"  type="text" placeholder="Usuario" size="23" id="Usuario" name="Usiario"/> </div>
+               <div class="one-third"><input asp-for="Password" placeholder="Contraseña" size="23" id="Contraseña" name="Contraseña"/></div>
+               <div class="clear"></div>
+            <div>
+                <input type="submit" value="Ingresar" id="contact_submit" name="contact_submit"  class="readmore readmore-1 readmore-1a"/>
+                <input type="reset" value="Borrar Formulario" id="reset" name="reset" class="readmore readmore-1 readmore-1a">
+            </div>
+            </div>
+    </form>
+  </div>
+</div>
+ <aside class="one-third-last">
+            <div class="sidebar">
+                <div class="description">
+                    <h4>Noticia</h4>
+                    <p>
+                        Para administrar el sistema de la página debera de proporcionar su usuario y contraseña, si no recuerda el mismo
+                        pongase en contacto con el administrador. 
+                    </p>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+</section>

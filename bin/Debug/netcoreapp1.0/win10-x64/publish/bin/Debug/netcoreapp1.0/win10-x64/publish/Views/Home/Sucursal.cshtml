@@ -1,0 +1,41 @@
+@model elguero.Entities.Sucursal 
+@{
+    ViewData["Title"] = "Sucursal " ;
+}
+<!--Fullscreen Image Start-->
+<img id="full-screen-background-image" src="~/images/slider/2.jpg" alt="img" />
+<!--Fullscreen Image End-->
+<!--Container Start-->
+<section id="container-fluid">
+    <!--form start..-->
+    <div id="container" class="contact">
+        <div class="two-third">
+            <!--google maps-->
+            <div class="google_map">
+                @Html.Raw(Model.GoogleMaps) 
+            </div>
+            <!-- fin de google maps -->
+        </div>
+        <aside class="one-third-last">
+            <div class="sidebar">
+                <div class="address"><i class="fa fa-home"> </i></div>
+                <div class="description">
+                    <a href="#"><h3>@Html.Raw(Model.SucursalNombre)</h3></a>
+                    <p>
+                        @Html.Raw(Model.Ubicacion)   
+                    </p>
+                </div>
+              
+            </div>
+            <div class="sidebar">
+                <div class="address"><i class="fa fa-info-circle"> </i></div>
+                <div class="description">
+                    <h3>Servicios</h3>
+                     @Html.Raw(Model.Servicios)   
+                </div>
+            </div>
+            @*<iframe height="250" src="http://www.youtube.com/embed/tRkuARhTfv8?rel=0&amp;showinfo=0&amp;controls=0&amp;HD=1"></iframe>*@
+        </aside>
+
+    </div>
+</section>

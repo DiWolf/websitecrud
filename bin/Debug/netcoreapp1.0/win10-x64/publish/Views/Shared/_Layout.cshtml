@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mariscos El Güero Lázaro Cárdenas - @ViewData["Title"]</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/reset.css"  />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/layout.css"  />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/supersized.css"  />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/supersized.shutter.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/menu.css"  />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/font-awesome.css"  />
+        <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Leckerli+One'  />	
+        <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Viga' />
+    
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/Isotope.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/prettyPhoto.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/style.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/style.css"  />
+        <link rel="stylesheet" type="text/css" href="~/css/frontend/responsive.css"  />
+
+
+    </environment>
+     <environment names="Staging,Production">
+        <script type="text/javascript" src="~/js/frontend/jquery.js"></script>
+        <script type="text/javascript" src="~/js/frontend/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="~/js/frontend/supersized.3.2.7.js"></script>
+        <script type="text/javascript" src="~/js/frontend/jquery.isotope.min.js"></script>
+        <script type="text/javascript" src="~/js/frontend/jquery.prettyPhoto.js"></script>
+        <script type="text/javascript" src="~/js/frontend/custom.js"></script>
+    </environment>
+</head>
+<body>
+    <!-- ==== Controlador de Imagenes ==-->
+
+
+<!-- == Logo del restaurante == --> 
+<section id="logo">
+        <img src="~/images/elguerocolorv2.png" alt="Mariscos el Güero"/>
+        <h4>Desde 1975 </h4>
+</section>
+<!-- == Fin del logo del restaurante == -->
+<!-- == Define el área del menú == -->
+<nav class="menu nav_wrapper" id="myslidemenu">
+        <ul class="menu" id="jqueryslidemenu">
+            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home"></i> Inicio</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Historia"> <i class="fa fa-home"></i> Historia</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Menu"><i class="fa fa-cutlery"></i>Menú</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Promociones"><i class="fa fa-thumbs-o-up"></i>Promociones</a></li>
+            <li>
+                <a href="#"><i class="fa fa-comments"></i>Sucursales</a>
+                <ul>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Sucursal" asp-route-id="1">El Güero I</a>
+                            <a asp-area="" asp-controller="Home" asp-action="Sucursal" asp-route-id="2">El Güero II</a>
+                        </li>
+                </ul>   
+            </li>
+             <li><a href="#"><i class="fa fa-beer"></i>Servicio para Eventos</a>
+                <ul>
+                    <li>
+                        <a asp-area="" asp-controller="Evento" asp-action="Index">Información</a>
+                        <a asp-area="" asp-controller="Evento" asp-action="MenuEventos">Menú de Eventos</a>
+                        <a asp-area="" asp-controller="Evento" asp-action="Galeria">Galería de Imagenes</a>
+                        </li>
+                </ul>
+            </li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Contacto"><i class="fa fa-phone-square"></i>Contacto</a></li>
+            <li><a href="#"><i class="fa fa-comments"></i>Salon Privado</a></li>
+        </ul>
+</nav> 
+<!-- == Fin del área de menú == -->
+
+  <!-- == Cuerpo de la aplicación == -->
+        @RenderBody()
+<!-- == Cuerpo de la aplicación == -->
+
+<!-- Pie de página == -->
+
+<!--Footer Start-->
+<footer>
+<div class="one-third">
+      <p>Reservaciones: (753) 532 11 99 o (753) 532 53 60	</p>
+</div>
+<div class="one-third">
+    <p class="copy-right">© Todos los derechos reservados - El Güero</p>
+</div>
+<div class="one-third-last">
+    	<ul>
+        	<li><a asp-area="" asp-controller="Account" asp-action="Login"><i class="fa fa-lock"></i><span>Login</span></a></li>
+            <li><i class="fa fa-facebook"></i></li>
+        </ul>
+</div>  
+</footer>
+
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+   
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

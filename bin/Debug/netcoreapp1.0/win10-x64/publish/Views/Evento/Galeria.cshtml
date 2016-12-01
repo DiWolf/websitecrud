@@ -1,0 +1,39 @@
+@model IEnumerable<elguero.Entities.Eventos.EventoGal>
+@{
+    ViewData["Title"] = "Galeria de Imagenes de Eventos";
+}
+
+<!--Fullscreen Image Start-->
+<img id="full-screen-background-image" src="../images/slider/2.jpg" alt="img" />
+<!--Fullscreen Image End-->
+<!--Container Start-->
+
+<!--Container Start-->
+<section id="container-fluid">
+    <!--form start..-->
+    <div id="container" class="contact">
+        <div class="two-third">
+           <h2>Galeria de Imagenes</h2>
+           <ul class="portfolio_items isotope-container clearfix portfolio-page-template gallery">
+               @foreach(var item in Model)
+{
+    <li class="isotope-item all logos">
+                    <div class="item-container">
+                      <a asp-area="" asp-controller="Evento" asp-action="GaleriaDateails" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.RutaFotoF)" alt="Evento en el guerpo 1" /></a>
+                        
+                    </div>
+                    <div class="portfolio_post_content">
+                        <h5> @Html.DisplayFor(modelItem => item.GaleriaName)</h5>
+                    </div>
+                </li>
+   
+}                    
+            </ul>
+
+
+
+    </div>
+
+
+
+</section>

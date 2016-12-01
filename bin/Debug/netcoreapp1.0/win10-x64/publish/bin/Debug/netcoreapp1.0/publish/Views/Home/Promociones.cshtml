@@ -1,0 +1,56 @@
+@model IEnumerable<elguero.Entities.Promocion>
+@{
+    ViewData["Title"] = "Promociones";
+}
+
+<!--Fullscreen Image Start-->
+<img id="full-screen-background-image" src="../images/slider/1.jpg" alt="img" />
+<!--Fullscreen Image End-->
+<!--Container Start-->
+<section id="container-fluid">
+
+    <section id="container" class="daily-special">
+        <h2>Promociones</h2>
+
+
+        <!--draggable silder start..-->
+        <div id="owl-demo" class="owl-carousel">
+             @foreach(var item in Model)
+             {
+            <div class="item">
+                <div class="item-container">
+                    <img src="@Html.DisplayFor(modelItem=>item.RutaImage)" alt="@Html.DisplayFor(modelItem=>item.Titulo)">
+                    <span class="item_price">$ @Html.DisplayFor(modelItem=>item.Precio)</span>
+                    <a class="dragable-slider" data-gal="prettyPhoto[gallery2]" href="@Html.DisplayFor(modelItem=>item.RutaImage)"></a>
+                </div>
+                <div class="slider_post_content"><h4>@Html.DisplayFor(modelItem=>item.Titulo)</h4></div>
+            </div>
+            }
+        </div>
+    </section>
+</section>
+
+<script type="text/javascript" src="~/js/frontend/owl.carousel.js"></script>
+<script type="text/javascript" src="~/js/frontend/jquery.prettyPhoto.js"></script>
+
+<script>
+
+jQuery(document).ready(function($) {
+   'use strict';
+
+$("#owl-demo").owlCarousel({
+autoPlay: false, //Set AutoPlay to 3 seconds
+items : 4,
+itemsDesktop : [1199,3],
+itemsDesktopSmall : [979,3],
+pagination: false
+});
+
+});
+</script>
+<script>
+jQuery(document).ready(function($) {
+   'use strict';
+$("a[data-gal^='prettyPhoto']").prettyPhoto({hook: 'data-gal'});
+});
+</script>

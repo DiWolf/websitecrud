@@ -1,0 +1,34 @@
+@model elguero.Entities.Eventos.Evento
+
+@{
+    ViewData["Title"] = "Información acerca de eventos";
+}
+
+<!--Fullscreen Image Start-->
+<img id="full-screen-background-image" src="~/images/slider/1.jpg" alt="img" />
+<!--Fullscreen Image End-->
+
+<!--Container Start-->
+<section id="container-fluid">
+    <!--form start..-->
+    <div id="container" class="contact">
+        <div class="two-third">
+           <h2>@Html.Raw(Model.Titulo)</h2>
+        @Html.Raw(Model.Contenido)
+            
+              @await Component.InvokeAsync("PlatillosList")
+                     @Html.Raw(Model.Pie)
+        </div>
+        <!-- Inicia área de información -->
+        <aside class="one-third-last">
+            
+            
+        </aside>
+
+
+
+    </div>
+
+
+
+</section>

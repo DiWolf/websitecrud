@@ -1,0 +1,38 @@
+@model IEnumerable<elguero.Entities.Eventos.MenuEventos>
+@{
+    ViewData["Title"] = "Menu del Restaurante para Banquetes y Eventos";
+}
+<!--Fullscreen Image Start-->
+<img id="full-screen-background-image" src="../images/slider/2.jpg" alt="img" />
+<!--Fullscreen Image End-->
+<!--Container Start-->
+
+
+<section id="container-fluid">
+    <section id="container">
+        <div class="text_info">
+            <h3>Conozca nuestros platillos</h3>
+            
+        </div>
+        <ul class="portfolio_items isotope-container clearfix portfolio-page-template gallery">
+            @foreach(var item in Model )
+{
+   
+
+            <li class="isotope-item all logos">
+                <div class="item-container">
+                    <img src="@Html.DisplayFor(modelItem => item.RutaImage)" alt="@Html.DisplayFor(modelItem=>item.Platillo)" />
+                    <a class="link_to_image" data-gal="prettyPhoto[gallery2]" href="@Html.DisplayFor(modelItem => item.RutaImage2)"> </a>
+                </div>
+            </li>
+            }
+            
+        </ul>
+    </section>
+</section>
+<script>
+    jQuery(document).ready(function ($) {
+        'use strict';
+        $("a[data-gal^='prettyPhoto']").prettyPhoto({ hook: 'data-gal' });
+    });
+</script>

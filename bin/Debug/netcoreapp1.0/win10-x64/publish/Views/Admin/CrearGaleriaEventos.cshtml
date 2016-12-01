@@ -1,0 +1,60 @@
+@model elguero.Entities.Eventos.EventoGal
+@{
+    Layout= "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Crear nueva Galeria";
+}
+
+<div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li><a href="#">Páginas</a></li>
+                                    <li>Galerias</li>
+                                </ul>
+                                <h4>Crear nueva Galeria</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+<div class="contentpanel">
+                      
+                         <div class="panel panel-success">
+                                 @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+              @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                                    <div class="panel-heading">
+                                        <div class="panel-btns">
+                                            <a href="#" class="panel-minimize tooltips" data-toggle="tooltip" title="Minimize Panel"><i class="fa fa-minus"></i></a>
+                                            <a href="#" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                                        </div><!-- panel-btns -->
+                                        <h3 class="panel-title">Entradas página historia</h3>                                      
+                                    </div>
+                                    <div class="panel-body">
+                                       
+                                     <div class="form-group">
+                                                <label class="col-sm-2 control-label">Nombre:</label>
+                                                <div class="col-sm-6">
+                                                     @Html.TextBoxFor(model => model.GaleriaName, new { @class = "form-control", @placeholder = "Nombre de la galeria" })
+                                                </div>
+                                            </div><!-- form-group -->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Subir Imagen principal:</label>
+                                            <div class="col-sm-6">
+                                                <input type="file" name="files" id="files" />
+                                            </div>
+                                    </div>
+                                               
+                                           
+        
+                                    </div><!-- panel-body -->
+                                    <div class="panel-footer">
+                                          <button type="submit" class="btn btn-success btn-rounded">Guardar</button>
+                                          <a asp-area="" asp-controller="Admin" asp-action="Sucursales" class="btn btn-info btn-rounded">Regresar</a>
+                                </div><!-- panel -->
+                    }
+                    </div><!-- contentpanel -->
+</div>

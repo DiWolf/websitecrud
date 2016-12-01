@@ -1,0 +1,55 @@
+@model elguero.Entities.Administrator.Historia
+@{
+    Layout= "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Editar Historia";
+}
+<div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li><a href="#">Páginas</a></li>
+                                    <li>Historia</li>
+                                </ul>
+                                <h4>Editar Historia</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+<div class="contentpanel">
+                      
+                         <div class="panel panel-success">
+                                 @using (Html.BeginForm())
+        {
+              @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                                    <div class="panel-heading">
+                                        <div class="panel-btns">
+                                            <a href="#" class="panel-minimize tooltips" data-toggle="tooltip" title="Minimize Panel"><i class="fa fa-minus"></i></a>
+                                            <a href="#" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                                        </div><!-- panel-btns -->
+                                        <h3 class="panel-title">Entradas página historia</h3>                                      
+                                    </div>
+                                    <div class="panel-body">
+                                       
+                                     <div class="form-group">
+                                                <label class="col-sm-2 control-label">Título de la Entrada:</label>
+                                                <div class="col-sm-6">
+                                                    @Html.TextBoxFor(model => model.Entrada, new { @class = "form-control", @placeholder = "Nombre del Grupo" })
+                                                </div>
+                                            </div><!-- form-group -->
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model =>model.Texto, new {@class="form-control", id="wysiwyg", rows="10" })
+                                             
+                                    </div>
+        
+                                    </div><!-- panel-body -->
+                                    <div class="panel-footer">
+                                          <button type="submit" class="btn btn-success btn-rounded">Guardar</button>
+                                </div><!-- panel -->
+                    }
+                    </div><!-- contentpanel -->
+</div>
+

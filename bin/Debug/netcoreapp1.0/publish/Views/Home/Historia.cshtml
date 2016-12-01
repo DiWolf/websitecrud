@@ -1,0 +1,55 @@
+@model elguero.Entities.Administrator.Historia
+@{
+    ViewData["Title"] = "Nuestra Historia";
+}
+
+<!--Fullscreen Image Start-->
+<img id="full-screen-background-image" src="../images/slider/1.jpg" alt="img" />
+<!--Fullscreen Image End-->
+
+<!--Container Start-->
+<section id="container-fluid">
+    <!--form start..-->
+    <div id="container" class="contact">
+        <div class="two-third">
+           <h2>@Html.Raw(Model.Entrada)</h2>
+           @Html.Raw(Model.Texto)
+            
+          
+        </div>
+        <!-- Inicia área de información -->
+        <aside class="one-third-last">
+            <div class="sidebar">
+                <div class="address"><i class="fa fa-home"> </i></div>
+                <div class="description">
+                    <a href="#"><h3>El Güero I</h3></a>
+                    <p>
+                        Av. Heroica Escuela Naval Militar <br />
+                        2541, Centro 60950. <br />
+                        Teléfono: <br />
+                        E-mail: <br />
+                    </p>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="address"><i class="fa fa-home"> </i></div>
+                <div class="description">
+                    <a href="#"><h3>El Güero II</h3></a>
+                    <p>
+                        Av. Las Palmas No.3 Col Centro<br />
+                        Frente al Hospital General  <br />
+                        Teléfono: <br />
+                        E-mail: <br />
+                    </p>
+                </div>
+            </div>
+            @*<iframe height="250" src="http://www.youtube.com/embed/tRkuARhTfv8?rel=0&amp;showinfo=0&amp;controls=0&amp;HD=1"></iframe>*@
+        </aside>
+
+
+
+    </div>
+
+
+
+</section>

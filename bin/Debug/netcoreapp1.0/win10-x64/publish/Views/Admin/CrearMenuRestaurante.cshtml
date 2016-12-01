@@ -1,0 +1,58 @@
+  @model elguero.Entities.Menu
+   @{
+    Layout= "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Imagenes disponibles";
+}
+
+<div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-folder"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li><a href="#">Páginas</a></li>
+                                    <li>Menu</li>
+                                </ul>
+                                <h4>Agregar una nueva imagen</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+<div class="contentpanel">
+                      
+                         <div class="panel panel-success">
+  @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+              @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <div class="panel-heading">
+                                        <div class="panel-btns">
+                                            <a href="#" class="panel-minimize tooltips" data-toggle="tooltip" title="Minimize Panel"><i class="fa fa-minus"></i></a>
+                                            <a href="#" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                                        </div><!-- panel-btns -->
+                                        <h3 class="panel-title">Agregar imagen</h3>                                      
+                                    </div>
+
+                                     <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Nombre:</label>
+                                                <div class="col-sm-6">
+                                                    @Html.TextBoxFor(model => model.TextoImagen, new { @class = "form-control", @placeholder = "Nombre de la promoción" })
+                                                </div>
+                                            </div><!-- form-group -->
+                                           
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Imagen</label>
+                                                <div class="col-sm-6">
+                                                      <input type="file" name="files" id="files" />
+                                                </div>
+                                            </div>
+                                     </div>
+                                     <div class="panel-footer">
+                                          <button type="submit" class="btn btn-success btn-rounded">Guardar</button>
+                                          <a asp-area="" asp-controller="Admin" asp-action="MostrarMenuRestaurante" class="btn btn-default btn-rounded">Retornar</a>
+                                </div><!-- panel -->
+
+        }
+                         </div>
